@@ -8,13 +8,10 @@ import 'package:movies_application/movies/presentation/controller/movies_events.
 import 'package:movies_application/movies/presentation/controller/movies_states.dart';
 
 class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
-  MoviesBloc() : super(const MoviesState()) {
+  GetNowPlayingUseCase getNowPlayingUseCase;
+  MoviesBloc(this.getNowPlayingUseCase) : super(const MoviesState()) {
     on<GetNowPlayingEvent>((event, emit) async {
-      BaseMoviesRemoteDataSource moviesRemoteDataSource =
-          MoviesRemoteDataSource();
-      BaseMoviesRepository moviesRepository =
-          MoviesRepository(moviesRemoteDataSource: moviesRemoteDataSource);
-      var result = await GetNowPlayingUseCase(moviesRepository).execute();
+      var result = await getNowPlayingUseCase.execute();
       emit(MoviesState(nowPlayingState: RequestStates.loaded));
       result.fold(
           (l) => {
