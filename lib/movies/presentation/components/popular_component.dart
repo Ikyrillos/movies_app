@@ -6,7 +6,6 @@ import 'package:movies_application/core/utils/app_constants.dart';
 import 'package:movies_application/core/utils/enums.dart';
 import 'package:movies_application/movies/presentation/controller/movies_bloc.dart';
 import 'package:movies_application/movies/presentation/controller/movies_states.dart';
-import 'package:movies_application/movies/presentation/screens/dummy.dart';
 import 'package:shimmer/shimmer.dart';
 
 class PopularComponent extends StatelessWidget {
