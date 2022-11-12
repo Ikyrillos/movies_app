@@ -63,7 +63,7 @@ class NowPlayingComponent extends StatelessWidget {
                             child: CachedNetworkImage(
                               height: 560.0,
                               imageUrl:
-                                  AppConstants.imageUrl(item.backdropPath!),
+                                  AppConstants.imageUrl(item.backdropPath),
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -96,7 +96,7 @@ class NowPlayingComponent extends StatelessWidget {
                                 Padding(
                                   padding: const EdgeInsets.only(bottom: 16.0),
                                   child: Text(
-                                    item.title!,
+                                    item.title,
                                     textAlign: TextAlign.center,
                                     style: const TextStyle(
                                       fontSize: 24,
@@ -115,7 +115,7 @@ class NowPlayingComponent extends StatelessWidget {
               ),
             );
           case RequestStates.error:
-            return Center(child: Text(state.nowPlayingMessage!));
+            return Center(child: Text(state.nowPlayingMessage));
         }
       },
     );
