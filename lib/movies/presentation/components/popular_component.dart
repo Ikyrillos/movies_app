@@ -44,7 +44,6 @@ class PopularComponent extends StatelessWidget {
                       padding: const EdgeInsets.only(right: 8.0),
                       child: InkWell(
                         onTap: () {
-                          /// TODO : NAVIGATE TO  MOVIE DETAILS
                           Navigator.push(
                             context,
                             MaterialPageRoute(

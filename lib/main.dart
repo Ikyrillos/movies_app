@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movies_application/core/services/service_locator.dart';
+import 'package:movies_application/core/utils/app_strings.dart';
 
 import 'movies/presentation/screens/movies_screen.dart';
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Movies App',
+      title: AppStrings.appName,
       theme: ThemeData.dark().copyWith(
         backgroundColor: Colors.grey.shade900,
       ),
