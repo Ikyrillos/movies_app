@@ -7,6 +7,7 @@ import 'package:movies_application/core/utils/app_constants.dart';
 import 'package:movies_application/core/utils/enums.dart';
 import 'package:movies_application/movies/presentation/controller/movies_bloc.dart';
 import 'package:movies_application/movies/presentation/controller/movies_states.dart';
+import 'package:movies_application/movies/presentation/screens/movie_detail_screen.dart';
 
 class NowPlayingComponent extends StatelessWidget {
   const NowPlayingComponent({
@@ -39,6 +40,14 @@ class NowPlayingComponent extends StatelessWidget {
                       key: const Key('openMovieMinimalDetail'),
                       onTap: () {
                         /// TODO : NAVIGATE TO MOVIE DETAILS
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => MovieDetailScreen(
+                              id: item.id,
+                            ),
+                          ),
+                        );
                       },
                       child: Stack(
                         children: [
